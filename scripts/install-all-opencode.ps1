@@ -29,4 +29,7 @@ foreach ($skill in @('drevo', 'rod-search')) {
     Copy-Item -LiteralPath $source -Destination $target -Recurse
     Write-Host "Installed $skill -> $target"
 }
-Write-Host 'Run from family project: opencode debug skill'
+Write-Host 'Check installed skills:'
+Write-Host '  Test-Path .\.opencode\skills\drevo\SKILL.md'
+Write-Host '  Test-Path .\.opencode\skills\rod-search\SKILL.md'
+Write-Host 'Then run opencode and ask the agent to load drevo and rod-search using the skill tool.'
