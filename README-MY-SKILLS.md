@@ -17,7 +17,11 @@
     cd C:\project\genealogy-skills
     .\scripts\install-all-opencode.ps1 -ProjectPath 'C:\project\genealogy'
     cd C:\project\genealogy
-    opencode debug skill
+    Test-Path '.\.opencode\skills\drevo\SKILL.md'
+    Test-Path '.\.opencode\skills\rod-search\SKILL.md'
+    Get-ChildItem '.\.opencode\skills' -Directory
+
+Затем запустите `opencode` и попросите агента загрузить навыки `drevo` и `rod-search` через инструмент `skill`. Команда `opencode debug skill` доступна не во всех версиях OpenCode; её отсутствие не означает, что навыки не установлены.
 
 Установка из исходников только копирует каталоги навыков; она не создаёт или публикует данные семьи. Для обновления после просмотра diff указать -Force; предыдущие каталоги навыков будут перенесены в резервные копии.
 
